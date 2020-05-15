@@ -36,6 +36,7 @@ module.exports = {
     modules: [],
     router: {
         linkActiveClass: 'active-link',
+        linkExactActiveClass: 'exact-active-link',
         extendRoutes(routes, resolve) {
             routes.push({
                 name: 'notFind',
