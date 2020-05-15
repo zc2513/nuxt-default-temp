@@ -31,7 +31,15 @@ module.exports = {
     ],
 
     modules: [],
-
+    router: {
+        extendRoutes(routes, resolve) {
+            routes.push({
+                name: 'notFind',
+                path: '*',
+                component: resolve(__dirname, 'layouts/404.vue')
+            })
+        }
+    },
     build: {
         transpile: [/^element-ui/],
 
