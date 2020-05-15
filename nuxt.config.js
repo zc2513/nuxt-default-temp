@@ -35,8 +35,11 @@ module.exports = {
 
     modules: [],
     router: {
+        middleware: 'user-agent',
+        prefetchLinks: true,
         linkActiveClass: 'active-link',
         linkExactActiveClass: 'exact-active-link',
+        scrollBehavior: () => { return { x: 0, y: 0 } },
         extendRoutes(routes, resolve) {
             routes.push({
                 name: 'notFind',
@@ -47,7 +50,6 @@ module.exports = {
     },
     build: {
         transpile: [/^element-ui/],
-
         extend(config, ctx) {
             const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
             svgRule.exclude = [path.join(__dirname, 'assets/svgs')]
