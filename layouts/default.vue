@@ -1,8 +1,10 @@
 <template>
   <div>
     <div style="text-align:center;">
-      <nuxt-link to="/">测试页面</nuxt-link>
-      <nuxt-link to="/ele">element-UI</nuxt-link>
+      <nuxt-link to="/">首页</nuxt-link>
+      <nuxt-link to="/icon">icon</nuxt-link>
+      <nuxt-link to="/title">title</nuxt-link>
+      <nuxt-link to="/element">element-UI</nuxt-link>
     </div>
     <nuxt />
   </div>

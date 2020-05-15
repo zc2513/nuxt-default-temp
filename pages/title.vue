@@ -1,5 +1,5 @@
 <template>
-  <div>首页</div>
+  <titleNav />
 </template>
 
 <script>
@@ -7,7 +7,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
