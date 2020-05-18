@@ -26,6 +26,7 @@ module.exports = {
     plugins: [
         '@/plugins/element-ui',
         '@/plugins/components',
+        '@/plugins/rem',
         '@/plugins/icon'
     ],
 
@@ -39,7 +40,6 @@ module.exports = {
         prefetchLinks: true,
         linkActiveClass: 'active-link',
         linkExactActiveClass: 'exact-active-link',
-        scrollBehavior: () => { return { x: 0, y: 0 } },
         extendRoutes(routes, resolve) {
             routes.push({
                 name: 'notFind',
@@ -50,6 +50,13 @@ module.exports = {
     },
     build: {
         transpile: [/^element-ui/],
+        postcss: {
+            plugins: {
+                'postcss-px2rem': {
+                    remUnit: 192
+                }
+            }
+        },
         extend(config, ctx) {
             const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
             svgRule.exclude = [path.join(__dirname, 'assets/svgs')]

@@ -14,17 +14,18 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "element-ui": "^2.13.1",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "postcss-px2rem": "^0.3.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
-    "svg-sprite-loader": "^5.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2"
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "svg-sprite-loader": "^5.0.0"
   },
   "config": {
     "nuxt": {
