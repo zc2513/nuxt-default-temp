@@ -1,0 +1,37 @@
+$themes: (
+    // 默认
+    defalut:(
+        //字体
+        font_color: #FFF,
+        
+        //背景
+        background_color: #006fc3,
+        
+        //边框
+        border_color: #e6e6e6
+    ),
+    // 鲜艳、友好的蓝色 主题
+    blue: (
+        //字体
+        font_color: #FFF,
+        
+        //背景
+        background_color: #409EFF,
+        
+        //边框
+        border_color: #3d414a
+    
+    ),
+    // 危险
+    Danger: (
+        //字体
+        font_color: #FFF,
+        
+        //背景
+        background_color: #F56C6C,
+    
+        //边框
+        border_color: #3d414a
+    
+    )
+)

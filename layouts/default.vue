@@ -5,6 +5,8 @@
       <nuxt-link to="/icon">icon</nuxt-link>
       <nuxt-link to="/title">title</nuxt-link>
       <nuxt-link to="/element">element-UI</nuxt-link>
+      <themeColor />
+
     </div>
     <nuxt />
   </div>
