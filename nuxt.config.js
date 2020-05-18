@@ -13,7 +13,10 @@ module.exports = {
                 content: process.env.npm_package_description || ''
             }
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'stylesheet', type: 'image/x-icon', href: 'https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css' }
+        ]
     },
 
     loading: { color: '#fff' },
@@ -49,7 +52,12 @@ module.exports = {
         }
     },
     build: {
+        analyze: process.argv.join('').includes('analyze'),
         transpile: [/^element-ui/],
+        productionSourceMap: false,
+        productionGzip: true,
+        productionGzipExtensions: ['js', 'css', 'svg'],
+        extractCSS: true,
         postcss: {
             plugins: {
                 'postcss-px2rem': {

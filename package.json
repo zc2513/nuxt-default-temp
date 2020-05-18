@@ -7,13 +7,14 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "analyze": "nuxt build --analyzer",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
-    "element-ui": "^2.13.1",
+    "element-ui": "^2.13.1", 
     "nuxt": "^2.0.0",
     "postcss-px2rem": "^0.3.0"
   },
