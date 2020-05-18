@@ -1,5 +1,6 @@
 /* eslint-disable nuxt/no-cjs-in-config */
 const path = require('path')
+const baseUrl = 'https://www.sinocmt.com'
 module.exports = {
     mode: 'universal',
     head: {
@@ -15,6 +16,8 @@ module.exports = {
         ]
     },
 
+    env: { baseUrl },
+
     loading: { color: '#fff' },
 
     css: [
@@ -23,20 +26,42 @@ module.exports = {
     ],
 
     plugins: [
-        '@/plugins/element-ui',
-        '@/plugins/components',
-        '@/plugins/rem',
-        '@/plugins/icon'
+        '~/plugins/element-ui',
+        '~/plugins/components',
+        '~/plugins/axios',
+        '~/plugins/rem',
+        '~/plugins/icon'
     ],
 
     buildModules: [
         '@nuxtjs/eslint-module'
     ],
 
-    modules: ['@nuxtjs/style-resources'],
+    modules: [
+        '@nuxtjs/axios',
+        '@nuxtjs/proxy',
+        '@nuxtjs/style-resources'
+    ],
+    axios: {
+        proxy: true
+    },
+    proxy: {
+        '/api': {
+            target: baseUrl,
+            changeOrigin: true,
+            pathRewrite: {
+                '^/api/': ''
+            }
+        }
+    },
     styleResources: {
         scss: './assets/scss/mixin.scss'
     },
+    // loadingIndicator: { //待测
+    //     name: 'cube-grid',
+    //     color: '#3B8070',
+    //     background: '#F00'
+    // },
     router: {
         middleware: 'user-agent',
         prefetchLinks: true,

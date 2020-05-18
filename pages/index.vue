@@ -6,7 +6,9 @@
 
 <script>
 export default {
-
+    async asyncData({ $axios }) {
+        await $axios.$get('/Handler/SearchHandler.ashx?OP=SearchData')
+    }
 }
 </script>
 
