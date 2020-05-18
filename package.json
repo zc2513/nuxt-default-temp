@@ -1,7 +1,7 @@
 {
   "name": "nuxt-ssr",
   "version": "1.0.0",
-  "description": "My well-made Nuxt.js project",
+  "description": "seo meta描述文本",
   "author": "zc2513",
   "private": true,
   "scripts": {
@@ -14,13 +14,14 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
-    "element-ui": "^2.13.1", 
+    "element-ui": "^2.13.1",
     "nuxt": "^2.0.0",
     "postcss-px2rem": "^0.3.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",

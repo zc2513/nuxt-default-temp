@@ -1,6 +1,6 @@
 <template>
   <div class="main center yellow">
-    <div class="w300 h300 center red">首页</div>
+    <div class="w300 h300 center red">首页---测试px2</div>
   </div>
 </template>
 
