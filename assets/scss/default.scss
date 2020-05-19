@@ -1,7 +1,7 @@
-.active-link{//组件默认的激活类名---使用后选中顶级路由
-    color: #F00;
-    font-size: 30px;
-}
+// .active-link{//组件默认的激活类名---使用后选中顶级路由--一般不使用，路由状态需要重定义
+//     color: #F00;
+//     font-size: 30px;
+// }
 .exact-active-link{//默认的active class
     color: #00F;
     font-size: 30px;
