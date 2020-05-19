@@ -57,10 +57,10 @@ module.exports = {
     styleResources: {
         scss: './assets/scss/mixin.scss'
     },
-    // loadingIndicator: { // 待测---只在spa模式生效
-    //     name: 'cube-grid',
+    // loadingIndicator: { // 只在spa模式生效
+    //     name: 'wandering-cubes',
     //     color: '#3B8070',
-    //     background: '#F00'
+    //     background: '#e2e2e2'
     // },
     router: {
         middleware: 'user-agent',
