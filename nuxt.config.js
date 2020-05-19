@@ -57,7 +57,7 @@ module.exports = {
     styleResources: {
         scss: './assets/scss/mixin.scss'
     },
-    // loadingIndicator: { //待测
+    // loadingIndicator: { // 待测---只在spa模式生效
     //     name: 'cube-grid',
     //     color: '#3B8070',
     //     background: '#F00'
