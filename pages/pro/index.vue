@@ -1,6 +1,6 @@
 <template>
   <div>
-    three 子子默认页面
+    首页
   </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>
