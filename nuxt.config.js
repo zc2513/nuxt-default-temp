@@ -82,6 +82,11 @@ module.exports = {
         productionGzip: true,
         productionGzipExtensions: ['js', 'css', 'svg'],
         extractCSS: true,
+        babel: {
+            plugins: [
+                ['component', { libraryName: 'element-ui', styleLibraryName: 'theme-chalk' }]
+            ]
+        },
         postcss: {
             plugins: {
                 'postcss-px2rem': {
