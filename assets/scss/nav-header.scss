@@ -1,12 +1,16 @@
 $bgc-h: $headerActiveMenuBgc !important;
 .is-active{//选中样式
     background-color: $bgc-h;
-    border: none !important;
+    border: none !important; 
 }
 #app{ 
     // 公用部分
     .nav-header{//nav-item返回为盒子 处理盒子为伸缩盒子
-        display: flex;  
+        display: flex;   
+        :focus,:active{//处理选中盒子后 盒子突出问题
+            outline: none;
+            border: 0;
+        }
     }
     .el-submenu__title{ //template slot='title' 做下拉选择时 调整icon位置
         position: relative;
@@ -71,8 +75,7 @@ $bgc-h: $headerActiveMenuBgc !important;
             }
         }    
         .el-submenu.is-active .el-submenu__title{//多选框选中样式
-            background-color: $bgc-h; 
-            
+            background-color: $bgc-h;
         }  
     } 
 
