@@ -1,3 +1,4 @@
+// 全局定义
 @mixin clearfix {
     &:after {
       content: "";
@@ -38,10 +39,12 @@
         position: absolute; 
         width: 30px;
         height: 11px;   
-        background: url('~assets/imgs/triangle-down.png') no-repeat 0 -10px;
+        background: url('~assets/images/triangle-down.png') no-repeat 0 -10px;
         background-size:100%; 
         left: 60px;  
         bottom: -11px;
     }
 }
+
+$headerMenuBgc:#006fc3;
   

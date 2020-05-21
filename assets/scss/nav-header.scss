@@ -1,0 +1,98 @@
+$bgc-h: $headerActiveMenuBgc !important;
+.is-active{//选中样式
+    background-color: $bgc-h;
+    border: none !important;
+}
+#app{ 
+    // 公用部分
+    .nav-header{//nav-item返回为盒子 处理盒子为伸缩盒子
+        display: flex;  
+    }
+    .el-submenu__title{ //template slot='title' 做下拉选择时 调整icon位置
+        position: relative;
+        .el-submenu__icon-arrow ,.el-icon-arrow-down{  
+            right: 5px;
+            color: #fff;
+        }  
+    } 
+    .el-submenu .el-submenu__title{//修复 突出部分多余显示问题
+        display: flex;
+        justify-content: center; 
+    }
+    .nav-header-fixed{//固定导航栏样式配置 
+        background-color: $fixHeaderMenuBgc;
+        $nav-height:50px;
+        height: $nav-height;  
+        box-shadow: 1px 2px 5px #f3f3f3; 
+        .fixed-row{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .row-menu{
+                height: $nav-height; 
+                .el-menu.el-menu--horizontal{//取消下拉框自带下划线
+                    border: 0;
+                } 
+                .el-menu{  
+                    .el-menu-item, .el-submenu__title{//处理el-memu内容垂直居中问题
+                        height: $nav-height;
+                        display: flex;
+                        align-items: center;
+                    }
+                } 
+                .el-submenu__icon-arrow ,.el-icon-arrow-down{ //template slot='title'  调整icon颜色
+                    color: #F00;
+                }  
+                .submenu-title-noDropdown,
+                .el-submenu__title {//鼠标滑过
+                    border-bottom: 2px solid #FFF;
+                    &:hover {
+                        background-color: #fff !important;
+                        border-bottom: 2px solid #f60 !important;
+                    }
+                }
+                .is-active{//选中
+                    background-color: #FFF !important;;
+                    border-bottom: 2px solid #f60 !important;
+                } 
+            }  
+        } 
+    } 
+    
+    .nav-header-container {//关于点击导航样式配置 
+        $nav-height:36px;
+        height: $nav-height;   
+        .el-submenu__title,.el-menu-item {//一级水平盒子高度 
+            border: 0;//取消切换的下滑线
+            height: $nav-height;    
+            line-height: $nav-height; 
+            &:hover {//鼠标滑过样式设置
+                background-color: #00a0e9 !important;
+            }
+        }    
+        .el-submenu.is-active .el-submenu__title{//多选框选中样式
+            background-color: $bgc-h; 
+            
+        }  
+    } 
+
+} 
+
+.el-menu--horizontal{//水平方向 下拉选项设置 
+    // &>.el-menu {
+    //     .svg-icon {
+    //         margin-right: 16px;
+    //     }
+    // } 
+    .el-submenu.is-active{ //下拉选中样式
+        .el-submenu__title{
+            background-color: $bgc-h; 
+        }
+    }     
+    .nest-menu .el-submenu>.el-submenu__title,
+    .el-menu-item {//垂直方向鼠标滑过样式
+      &:hover { 
+        background-color: $headerActiveMenuBgc !important;
+      } 
+    } 
+} 

@@ -1,0 +1,27 @@
+// 方法使用定义 
+
+// 导航栏选项条盒子宽度
+$dropDownTabsWidth: 210px;
+// 导航栏颜色定义
+$headerMenuBgc:#006fc3;
+$headerActiveMenuBgc:#00a0e9;
+$headerTextColor: #FFF;
+$headerActiveTextColor: #FFF;  
+
+// 固定导航栏颜色定义
+$fixHbac:#FFF;
+$fixHeaderTextColor: #f60;
+$fixHeaderMenuBgc:#FFF;
+
+
+:export {     
+  dropDownTabsWidth:$dropDownTabsWidth;
+  hBgc:$headerMenuBgc;
+  hActiveBgc:$headerActiveMenuBgc;
+  hText:$headerTextColor;
+  hActiveText:$headerActiveTextColor; 
+  fixHeaderMenuBgc:$fixHeaderMenuBgc;
+  fixHbac:$fixHbac;
+  fixHeaderTextColor:$fixHeaderTextColor;
+  fixHActiveText:$fixHeaderTextColor;
+}
