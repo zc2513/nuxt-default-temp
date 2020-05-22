@@ -17,7 +17,7 @@ export default
     },
 
     pro: {
-        meta: { title: '招投标广场' },
+        meta: { title: 'pro子默认index首页' },
         sole: 2
     },
     'pro-info': {
@@ -111,9 +111,22 @@ export default
         sole: 6,
         meta: { title: '首页' }
     },
+    demo: {
+        sole: 7,
+        meta: { title: 'demo首页' },
+        hidden: true
+    },
+    'demo-info': {
+        sole: 701,
+        meta: { title: '详情页面' }
+    },
+    'demo-type': {
+        sole: 702,
+        meta: { title: '动态路由布局页面' }
+    },
     notFind: {
         meta: { title: '404' },
-        sole: 7,
+        sole: 99,
         hidden: true
     }
 }
