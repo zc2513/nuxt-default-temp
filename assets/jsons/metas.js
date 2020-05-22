@@ -118,10 +118,12 @@ export default
     },
     'demo-info': {
         sole: 701,
-        meta: { title: '详情页面' }
+        meta: { title: '详情页面' },
+        hidden: true
     },
     'demo-type': {
         sole: 702,
+        addTo: [],
         meta: { title: '动态路由布局页面' }
     },
     notFind: {
