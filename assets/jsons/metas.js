@@ -123,8 +123,21 @@ export default
     },
     'demo-type': {
         sole: 702,
-        addTo: [],
-        meta: { title: '动态路由布局页面' }
+        meta: { title: '动态路由布局页面' },
+        addTo: [
+            {
+                path: 'news',
+                meta: { title: '新闻业' }
+            },
+            {
+                path: 'add',
+                meta: { title: '新增' }
+            },
+            {
+                path: 'edit',
+                meta: { title: '编辑' }
+            }
+        ]
     },
     notFind: {
         meta: { title: '404' },

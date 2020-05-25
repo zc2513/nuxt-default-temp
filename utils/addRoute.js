@@ -1,4 +1,29 @@
 import metas from '@/assets/jsons/metas'
+
+/**
+ * @description 方法整合
+ * @author zc2513
+ * @date 2020-05-25
+ * @export
+ * @param {*} routes
+ * @returns
+ */
+export function latestRoutes(routes) {
+    const newRoutes = addRule(routes)
+
+    addfakeRoute(fakeRoute, newRoutes)
+
+    addSort(newRoutes)
+
+    fsort(newRoutes)
+
+    return newRoutes
+}
+
+// -------------------------------------------------实现
+
+const fakeRoute = {} // 追加的无组件路由
+
 /**
  * @description 给nuxt/router追加附加项
  * @author zc2513
@@ -18,6 +43,10 @@ export function addRule(routes) {
             if (!itemMeta) {
                 console.warn(`警告：未在metas中找到key为 ${name} 的定义`)
             }
+            if (itemMeta.addTo) {
+                const names = name.includes('-') ? (name.split('-').slice(0, -1)).join('-') : ''
+                fakeRoute[names] = itemMeta.addTo
+            }
             if (children && children.length) {
                 return { ...item, ...itemMeta, children: addRule(children) }
             } else {
@@ -27,6 +56,34 @@ export function addRule(routes) {
             return { ...item, children: addRule(children) }
         }
     })
+}
+
+/**
+ * @description 追加静态路由
+ * @author zc2513
+ * @date 2020-05-25
+ * @export
+ * @param {*} fakeRoute
+ * @param {*} newRoutes
+ */
+export function addfakeRoute(fakeRoute, newRoutes) {
+    for (const name in fakeRoute) { // 追加路由处理--只追加到三级路由
+        const names = name.split('-')
+        newRoutes.forEach((e) => {
+            if ((e.path === `/${names[0]}` || e.path === name) && e.children) {
+                if (names.length === 1) { // 二级路由
+                    e.children = [...e.children, ...fakeRoute[names.join('-')]]
+                }
+                if (names.length === 2) { // 三级路由
+                    e.children.forEach((item) => {
+                        if (item.path === name[2] && item.children) {
+                            item.children = [...item.children, ...fakeRoute[names.join('-')]]
+                        }
+                    })
+                }
+            }
+        })
+    }
 }
 
 /**
