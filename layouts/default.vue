@@ -28,19 +28,13 @@
 </template>
 <script>
 import navItem from './header/nav'
-// import metas from '@/assets/jsons/metas'
 import variables from '@/assets/scss/variables.scss'
 import { latestRoutes } from '@/utils/addRoute'
 export default {
     components: { navItem },
     computed: {
         routes() {
-            const routeList = this.$router.options.routes
-            // const newRoutes = this.addRule(routeList)
-            // this.addSort(newRoutes)
-            // newRoutes.sort(({ sole: a }, { sole: b }) => a - b)
-            // console.log(newRoutes)
-            return latestRoutes(routeList)
+            return latestRoutes(this.$router.options.routes)
         },
         activeMenu() {
             const route = this.$route
@@ -53,43 +47,6 @@ export default {
         variables() {
             return variables
         }
-    },
-    methods: {
-        // addRule(routes) {
-        //     return routes.map((item) => {
-        //         const { name, children, path } = item
-        //         if (path.startsWith(':')) {
-        //             item.hidden = true
-        //         }
-        //         if (name) {
-        //             const itemMeta = metas[name]
-        //             if (!itemMeta) {
-        //                 console.warn(`警告：未在metas中找到key为 ${name} 的定义`)
-        //             }
-        //             if (children && children.length) {
-        //                 return { ...item, ...itemMeta, children: this.addRule(children) }
-        //             } else {
-        //                 return { ...item, ...itemMeta }
-        //             }
-        //         } else if (children && children.length) {
-        //             return { ...item, children: this.addRule(children) }
-        //         }
-        //     })
-        // },
-        // addSort(newRoutes) {
-        //     for (const item of newRoutes) {
-        //         const { sole, children } = item
-        //         if (!sole && children && children.length) {
-        //             const { sole, meta } = children[0]
-        //             item.sole = sole
-        //             if (!item.meta) item.meta = meta || {}
-        //             children.sort(({ sole: a }, { sole: b }) => a - b)
-        //             this.addSort(children)
-        //         } else if (children && children.length) {
-        //             this.addSort(children)
-        //         }
-        //     }
-        // }
     }
 }
 </script>
