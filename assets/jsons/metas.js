@@ -126,15 +126,18 @@ export default
         meta: { title: '动态路由布局页面' },
         addTo: [
             {
-                path: 'news',
-                meta: { title: '新闻业' }
-            },
-            {
                 path: 'add',
+                sole: 703,
                 meta: { title: '新增' }
             },
             {
+                path: 'news',
+                sole: 705,
+                meta: { title: '新闻业' }
+            },
+            {
                 path: 'edit',
+                sole: 704,
                 meta: { title: '编辑' }
             }
         ]
