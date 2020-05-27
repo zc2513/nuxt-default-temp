@@ -1,22 +1,11 @@
-# nuxt-ssr
-
-> My well-made Nuxt.js project
-
-## Build Setup
-
 ```bash
 # install dependencies
-$ yarn install
+$ npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass
+$ npm install
 
 # serve with hot reload at localhost:3000
-$ yarn dev
+$ npm dev
 
 # build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+$ npm build
+$ npm start 
