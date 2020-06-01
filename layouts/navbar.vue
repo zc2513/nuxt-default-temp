@@ -44,7 +44,6 @@ export default {
             this.addfakeRoute(this.fakeRoute, newRoutes)
             this.addSort(newRoutes)
             newRoutes.sort(({ sole: a }, { sole: b }) => a - b)
-            console.log()
             return newRoutes
         },
         activeMenu() {
