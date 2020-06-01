@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    {{ metas }}
     <div class="nav-header-container" style="backgroundColor: #000;">
       <el-menu
         class="nav-header sin-container"
@@ -27,14 +27,18 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import navItem from './header/nav'
 import variables from '@/assets/scss/variables.scss'
 import { latestRoutes } from '@/utils/addRoute'
 export default {
     components: { navItem },
     computed: {
+        ...mapGetters('route', ['metas']),
         routes() {
-            return latestRoutes(this.$router.options.routes)
+            const newRoutes = latestRoutes(this.$router.options.routes)
+            this.$store.commit('route/setRoutes', newRoutes)
+            return newRoutes
         },
         activeMenu() {
             const route = this.$route
@@ -48,6 +52,7 @@ export default {
             return variables
         }
     }
+
 }
 </script>
 <style lang="scss" scoped>

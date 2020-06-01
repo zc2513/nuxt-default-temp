@@ -4,6 +4,7 @@
       <app-link
         v-if="onlyOneChild.meta"
         :to="resolvePath(onlyOneChild.path)"
+        @click.native="collectRoute(onlyOneChild)"
       >
         <el-menu-item
           :index="resolvePath(onlyOneChild.path)"
@@ -18,7 +19,7 @@
       ref="subMenu"
       :class="{'is-active':$route.path.startsWith(basePath)}"
       :index="resolvePath(item.path)"
-      @click.native="gotoTitle(resolvePath(item.path))"
+      @click.native="gotoTitle(item)"
     >
       <template slot="title">
         <item v-if="item.meta" :title="item.meta.title" />
@@ -97,8 +98,12 @@ export default {
             }
             return path.resolve(this.basePath, routePath)
         },
-        gotoTitle(path) { // 多级选择标题跳转
-            this.$router.push(path)
+        gotoTitle(item) { // 多级选择标题跳转
+            this.collectRoute(item)
+            this.$router.push(this.resolvePath(item.path))
+        },
+        collectRoute(item) {
+            this.$store.commit('route/setNowRoute', item)
         }
     }
 }

@@ -33,15 +33,6 @@ export default {
     },
     asyncData({ params }) {
         return { params }
-    },
-
-    watch: {
-        $route: {
-            handler(v) {
-                console.log(v)
-            },
-            immediate: true
-        }
     }
 }
 </script>
